@@ -3,7 +3,6 @@ const fs = require('fs');
 
 const pathDir = path.join(__dirname, 'secret-folder');
 fs.readdir(pathDir, {withFileTypes: true}, (err, files) => {
-  let size = 0;
   if (err) {
     throw err;
   } else {
