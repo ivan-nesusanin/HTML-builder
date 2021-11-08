@@ -14,7 +14,7 @@ fs.readdir(pathDir, { withFileTypes: true }, (err, files) => {
     if (file.isFile() && path.extname(`${file.name}`) === '.css') {
       fs.readFile(pathCssFile, 'utf-8', (err, data) => {
         if (err) throw err;
-        fs.appendFile(pathBundleFile, data, (err) => {
+        fs.appendFile(pathBundleFile, `${data}\n`, (err) => {
           if (err) throw err;
         });
       });
