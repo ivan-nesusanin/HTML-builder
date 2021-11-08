@@ -11,7 +11,7 @@ fs.readdir(pathDir, {withFileTypes: true}, (err, files) => {
         const arr = file.name.split('.');
         fs.stat(`${pathDir}\\${file.name}`, (err, stats) => {
           if (err) throw err;
-          console.log(`${arr[0]} - ${arr[1]} - ${stats.size / 1000}kb`);
+          console.log(`${arr[0]} - ${arr[1]} - ${stats.size / 1024}kb`);
         });
       }
     });
